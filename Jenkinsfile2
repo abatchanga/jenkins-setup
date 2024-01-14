@@ -7,10 +7,11 @@ pipeline{
         stage('sonarqube scan'){
             steps{
                 withSonarQubeEnv('sonarserver'){
-                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=abatchanga_week16-code-geo2'
-            }
+              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=abatchanga_week16-code-geo2'
+             // sh 'mvn sonar:sonar'
             }
         }
+    }
         stage('all the maven commands'){
             steps{
                 sh 'mvn clean test compile install package'
