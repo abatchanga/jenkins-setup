@@ -4,9 +4,12 @@ pipeline{
         maven 'M2_HOME'
         }
     stages{
-        stage('sonarqubescan'){
+        stage('sonarqube scan'){
             steps{
-                sh 'mvn sonar:sonar'
+                withSonarQubeEnv('sonarserver'){
+                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=abatchanga_week16-code-geo2'
+              //sh 'mvn sonar:sonar'
+            }
             }
         }
         stage('all the maven commands'){
