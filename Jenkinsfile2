@@ -8,7 +8,6 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonarserver'){
               sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=abatchanga_week16-code-geo2'
-              sh ('mvn sonar:sonar -Dsonar.scanner.force-deprecated-java-version=true')
              // sh 'mvn sonar:sonar'
             }
         }
