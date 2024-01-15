@@ -19,7 +19,7 @@ pipeline{
         }
         stage ('upload artifact'){
             steps{
-                sh('curl -uadmin:APBaP8VLm39jZrPjQdMCvaUjHm7 -T /target/bio*.jar "http://54.145.83.172:8081/artifactory/geoapp/"')
+                sh ('curl -uadmin:APBaP8VLm39jZrPjQdMCvaUjHm7 -T /target/bio*.jar "http://54.145.83.172:8081/artifactory/geoapp/"')
             }
         }
     }
